@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+
+{% block title %}Ajuda da Léia | Mentor Maker{% endblock %}
+
+{% block content %}
+<section class="hero-panel">
+    <div class="hero-copy">
+        <span class="status-pill" id="listen-pill">Verificando escuta</span>
+        <h2 class="hero-title">Olá! Sou a Léia 🧡</h2>
+        <p class="hero-text">
+            Peça ajuda falando <strong>“Maker”</strong> para voltar ao início, <strong>“Laser”</strong> ou <strong>“Biologia”</strong> para explorar conteúdos.
+        </p>
+
+        <div class="action-row">
+            <button class="primary-button" id="toggle-listen-button" type="button">
+                <i class="fas fa-microphone-alt"></i> Ativar escuta
+            </button>
+            <a class="secondary-button" href="/dashboard">
+                <i class="fas fa-tachometer-alt"></i> Ver estatísticas
+            </a>
+        </div>
+
+        <div class="hero-badges">
+            <span class="hero-badge"><i class="fas fa-robot"></i> Robô amigo</span>
+            <span class="hero-badge"><i class="fas fa-users"></i> Atendimento por grupos</span>
+            <span class="hero-badge"><i class="fas fa-brain"></i> Aprendizagem ativa</span>
+        </div>
+    </div>
+
+    <aside class="hero-side">
+        <div class="panel-card emphasis">
+            <div class="panel-label">🤖 Modo da Léia</div>
+            <div class="metric-big" id="modo-atual">--</div>
+            <p class="support-text" id="modo-descricao">Sincronizando com o servidor...</p>
+        </div>
+        <div class="mini-grid">
+            <div class="panel-card">
+                <div class="panel-label"><i class="fas fa-user-friends"></i> Grupo atual</div>
+                <div class="metric-number" id="grupo-atual">--</div>
+            </div>
+            <div class="panel-card">
+                <div class="panel-label"><i class="fas fa-clock"></i> Fila de espera</div>
+                <div class="metric-number" id="fila-total">0</div>
+            </div>
+            <div class="panel-card">
+                <div class="panel-label"><i class="fas fa-exclamation-triangle"></i> Urgente</div>
+                <div class="metric-number" id="grupo-urgente">Nenhum</div>
+            </div>
+            <div class="panel-card">
+                <div class="panel-label"><i class="fas fa-tablet-alt"></i> Conteúdo</div>
+                <div class="metric-number small" id="conteudo-atual">inicio</div>
+            </div>
+        </div>
+    </aside>
+</section>
+
+<section class="content-grid">
+    <div class="panel-card">
+        <div class="section-heading">
+            <h3><i class="fas fa-microphone"></i> Estado do sistema</h3>
+        </div>
+        <div class="status-list">
+            <div class="status-item">
+                <span class="status-dot" id="dot-pepper"></span>
+                <div>
+                    <strong>Léia está ouvindo?</strong>
+                    <p id="escuta-descricao">Carregando...</p>
+                </div>
+            </div>
+            <div class="status-item">
+                <span class="status-dot neutral"></span>
+                <div>
+                    <strong>Fluxo de atendimento</strong>
+                    <p id="fluxo-descricao">Aguardando leitura.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel-card">
+        <div class="section-heading">
+            <h3><i class="fas fa-tv"></i> Tela do tablet</h3>
+        </div>
+        <div class="control-stack">
+            <label class="field-label" for="conteudo-select">📚 Mudar conteúdo exibido:</label>
+            <select id="conteudo-select" class="select-input">
+                <option value="inicio">🏠 Página inicial</option>
+                <option value="laser">🔥 Corte a laser</option>
+                <option value="biologia">🌿 Biologia</option>
+            </select>
+            <button class="primary-button compact" id="save-content-button" type="button">
+                <i class="fas fa-sync-alt"></i> Atualizar tablet
+            </button>
+            <p class="helper-text" id="conteudo-feedback">Escolha a atividade que a Léia vai mostrar.</p>
+        </div>
+    </div>
+
+    <div class="panel-card">
+        <div class="section-heading">
+            <h3><i class="fas fa-users"></i> Grupos chamando</h3>
+        </div>
+        <div id="fila-lista" class="queue-list empty-state">
+            Nenhum grupo aguardando no momento.
+        </div>
+    </div>
+</section>
+
+<section class="feature-band">
+    <article class="feature-card">
+        <i class="fas fa-lightbulb" style="font-size: 2rem; color: #FF6B35;"></i>
+        <h3>Aprender brincando</h3>
+        <p>O Léia ajuda a turma com demonstrações e conteúdo interativo.</p>
+    </article>
+    <article class="feature-card">
+        <i class="fas fa-list-ol" style="font-size: 2rem; color: #0057B8;"></i>
+        <h3>Fila organizada</h3>
+        <p>Grupos com urgência são atendidos primeiro. Tudo bem transparente!</p>
+    </article>
+    <article class="feature-card">
+        <i class="fas fa-comments" style="font-size: 2rem; color: #2E8B57;"></i>
+        <h3>Comandos de voz</h3>
+        <p>Diga "Maker", "Laser" ou "Biologia" e a Léia reage na hora.</p>
+    </article>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/home.js') }}"></script>
+{% endblock %}

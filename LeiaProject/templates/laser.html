@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% block title %}Corte a Laser | Mentor Maker{% endblock %}
+
+{% block content %}
+<section class="content-page">
+
+    <div class="content-hero">
+        <p class="panel-label">Atividade Maker</p>
+        <h2 class="hero-title">Corte a Laser</h2>
+        <p class="hero-text">
+            Utilize o corte a laser para criar peças com precisão. Ajustar potência, velocidade e o design corretamente é essencial para um bom resultado.
+        </p>
+    </div>
+
+    <div class="content-grid">
+
+        <!-- CONFIGURAÇÕES -->
+        <div class="panel-card">
+            <h3>Parâmetros de Corte</h3>
+
+            <p><strong>Acrílico (corte):</strong></p>
+            <ul class="clean-list">
+                <li>Potência: 90 – 100%</li>
+                <li>Velocidade: 5 – 10 mm/s</li>
+            </ul>
+
+            <p><strong>MDF fino (3mm):</strong></p>
+            <ul class="clean-list">
+                <li>Potência: 50 – 70%</li>
+                <li>Velocidade: 100 – 300 mm/min</li>
+            </ul>
+
+            <p><strong>Gravação (qualquer material):</strong></p>
+            <ul class="clean-list">
+                <li>Potência: 10 – 30%</li>
+                <li>Velocidade: Alta</li>
+            </ul>
+        </div>
+
+        <!-- SOFTWARE -->
+        <div class="panel-card">
+            <h3>Softwares Utilizados</h3>
+            <ul class="clean-list">
+                <li><strong>LightBurn:</strong> edição e organização do corte</li>
+                <li><strong>LaserGRBL:</strong> envio direto para máquina</li>
+                <li><strong>Inkscape:</strong> criação vetorial</li>
+            </ul>
+        </div>
+
+        <!-- PREPARAÇÃO -->
+        <div class="panel-card">
+            <h3>Preparação do Arquivo</h3>
+            <ul class="clean-list">
+                <li>Usar linhas vetoriais (não imagens)</li>
+                <li>Definir espessura mínima da linha</li>
+                <li>Separar corte e gravação por cores</li>
+                <li>Verificar escala real (mm)</li>
+            </ul>
+        </div>
+
+        <!-- SEGURANÇA -->
+        <div class="panel-card">
+            <h3>Segurança</h3>
+            <ul class="clean-list">
+                <li>Nunca deixar o laser sozinho</li>
+                <li>Evitar materiais tóxicos (PVC, por exemplo)</li>
+                <li>Manter ventilação ativa</li>
+                <li>Testar antes de executar o corte final</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- INVESTIGAÇÃO -->
+    <div class="panel-card" style="margin-top:20px;">
+        <h3>Pergunta Investigativa</h3>
+        <p>
+            Como ajustar potência e velocidade para cortar um material sem queimar suas bordas?
+        </p>
+
+        <p>
+            Pense: o que acontece se a potência for muito alta? E se a velocidade for muito baixa?
+        </p>
+
+        <p>
+            Teste combinações e observe os resultados antes de definir o padrão ideal.
+        </p>
+    </div>
+
+</section>
+{% endblock %}
